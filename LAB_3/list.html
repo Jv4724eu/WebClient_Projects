@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+
+</head>
+<body>
+<p>Enter Item below</p>
+<input type="text" id="item">
+<button id="submit">ADD</button>
+<button id="clear">CLEAR LIST</button>
+
+<ul id="list">
+
+</ul>
+
+<script>
+    let list = document.querySelector('#list')
+    let item = document.querySelector('#item')
+    let submitButton = document.querySelector('#submit')
+    let clearButton = document.querySelector('#clear')
+
+
+
+
+    submitButton.addEventListener('click', function () {
+
+
+
+        let listItem = document.createElement('li')
+        let CNodes = document.getElementById("list").childNodes
+        let max = 10;
+        let count = 0;
+
+        //checks if characters entered are less than 50
+        if(item.value.length > 50){
+            alert('List item must be less than 50 characters long')
+        }
+        //if text area is empty, do nothing
+        else if(item.value.length == 0){
+
+        }
+        else {
+            //counts number of child nodes created (counts number of list items)
+            for (let i in CNodes){
+                let node = CNodes[i];
+                if(node.nodeName == 'LI' || node.nodeName == 'li'){
+                    count++
+                }
+            }
+            //checks if number of list items are more than max and add to the list if not
+            if(count < max) {
+                listItem.innerHTML = item.value
+                list.appendChild(listItem)
+                item.value = ''
+            }
+        }
+    })
+
+    clearButton.addEventListener('click', function () {
+        list.innerHTML = ''
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+/*CSS STYLE SHEET FOR FAVORITES PAGE*/
+/*KELSEY STIFF 1/18/2020 */
+
+
+#page-title{
+    color: white;
+    text-shadow: 4px 4px steelblue;
+    margin: 40px;
+    text-align: center;
+    font-family: "Freestyle Script";
+    font-size: 50px;
+}
+
+#favorite-music-name{
+    color:white;
+    background-color: cadetblue;
+}
+
+#name{
+    color: white;
+    text-align: center;
+    font-family: "Freestyle Script";
+}
+
+.favorite-section{
+    border: 5px white dotted;
+    margin: 5px;
+    padding: 10px;
+}
+
+.section-header{
+   color: white;
+   text-shadow: 3px 3px cadetblue;
+}
+
+#favorite-movie-title{
+    font-style: italic;
+    color: cadetblue;
+}
+
+#most-favorite-food{
+    font-size: xx-large;
+
+}
+.favorite-image{
+    border-radius: 10px;
+    border: 5px solid cadetblue;
+}
+
+
+th{
+    border: 2px solid white;
+    color: cadetblue;
+}
+
+td{
+    border: 2px solid white;
+    color: grey;
+}
+
+
+
+a{
+    color: slateblue;
+}
+
+li{
+    margin-left: 50px;
+}
+
+p{
+    color: grey;
+}
+
+ul{
+    color: grey;
+}
+
+body{
+    background-color: powderblue;
+}
