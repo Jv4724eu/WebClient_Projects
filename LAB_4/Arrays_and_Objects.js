@@ -1,7 +1,7 @@
 /* Lab: write the code requested by lines marked //TODO
 You should NOT modify any of the code that's here already. Add the code requested.   */
 
-console.log('Lab 4. Please write the code requested at the //TODO markers.')
+console.log('Lab 4. Please write the code requested at the //TODO markers.');
 
 /* a. Use this JavaScript object. This represents the current position of the International Space Station
 at 1pm on January 12th 2018, fetched from http://api.open-notify.org/iss-now.json.
@@ -18,9 +18,13 @@ let iss_location = {
 };
 
 // TODO Extract the latitude value, and log it to the console.
+lat = 'latitude: ' + iss_location.iss_position.latitude;
+console.log(lat);
+
 
 // TODO Extract the longitude value, and log it to the console.
-
+long = 'Longitude: ' + iss_location.iss_position.latitude;
+console.log(long);
 
 
 
@@ -38,8 +42,22 @@ let rates = {
 };
 
 // TODO write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
+rates.CHF = 1.1787;
+console.log(rates)
+
 // TODO if you had 100 Euros, write code to get the exchange rate from the object, then calculate
 //      the equivalent value in Australian Dollars (AUD)
+let euros = 100;
+for(let r in rates){
+    let rate  = rates[r];
+}
+function exchangeRate(rate){
+
+    let value = euros / rate;
+    return value;
+}
+
+
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
 
@@ -58,24 +76,28 @@ let cats_and_owners = [
 
 // TODO print Gary Oldman's cat's name
 
+    cats_and_owners.forEach(function (element) {
+        if(element.name == 'Gary Oldman'){
+            console.log(element.cat);
+        }
+    })
+
+
+
+
 // TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
+cats_and_owners.push({'name': "Taylor Swift",'cat': 'Meredith'})
+
+
+
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
-
-
-
+cats_and_owners.forEach(function (element) {
+    console.log(element)
+})
 
 /* d. Use the following JSON object, describing the Nobel Prize winners in 2017.
 Source http://api.nobelprize.org/v1/prize.json?year=2017
 * */
-
-// TODO print the full name of the Literature Nobel laureate.
-// TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
-// TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
-// TODO write code to print the total number of prize categories
-// TODO write code to count the total number of laureates from 2017.
-//   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
-
-
 let nobel_prize_winners_2017 = {
     "prizes":[
         {
@@ -200,3 +222,41 @@ let nobel_prize_winners_2017 = {
         }
     ]
 };
+
+// TODO print the full name of the Literature Nobel laureate
+nobel_prize_winners_2017.prizes.forEach(function (element) {
+   element.laureates.forEach(function (e) {
+       let fullName = e.firstname + ', ' + e.surname;
+        console.log(fullName)
+   })
+})
+
+// TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
+nobel_prize_winners_2017.prizes.forEach(function (element) {
+    element.laureates.forEach(function (e) {
+        console.log(e.id);
+
+    })
+})
+
+// TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
+nobel_prize_winners_2017.prizes.forEach(function (element) {
+    console.log(element.category)
+})
+
+// TODO write code to print the total number of prize categories
+let count = 0;
+nobel_prize_winners_2017.prizes.forEach(function (element) {
+    count++
+})
+console.log(count)
+
+// TODO write code to count the total number of laureates from 2017.
+//   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
+let countLaureates = 0;
+nobel_prize_winners_2017.prizes.forEach(function (element) {
+    element.laureates.forEach(function (e) {
+       countLaureates++
+    })
+})
+console.log(countLaureates);
