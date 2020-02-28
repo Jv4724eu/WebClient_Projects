@@ -1,0 +1,13 @@
+What does this Vue error message mean? What causes it, and how do you fix it?
+
+The "Property or method "total" is not defined on the instance but is referenced during render"
+error means the total variable is being used but is not defined in the Vue objects data, to
+fix the issue, the total variable must be defined within the Vue object data. Since the total
+needs to changed based off the unitPrice and Qty it cant be defined directly in the Vue data,
+for this scenario we can use the computed property calculates data in the Vue object and recalculates
+if the data changes.
+
+
+
+
+

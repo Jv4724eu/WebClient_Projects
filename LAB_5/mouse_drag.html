@@ -52,15 +52,11 @@
         //Draw a filled rectangle centered under the mouse click
         //x, y is the top left corner, so shift up and left by 5 to center it under the mouse
         context.beginPath();
+        //set radius to range input
         context.arc(x-5,y-5,radius.value,0,10*Math.PI);
         context.stroke();
-
         //set color of circle to color input
         context.strokeStyle = colorChoice.value;
-
-        //set radius to range input
-
-
 
 
     })
