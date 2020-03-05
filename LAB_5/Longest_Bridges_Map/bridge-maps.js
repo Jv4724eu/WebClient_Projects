@@ -13,11 +13,11 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 //array of bridge objects
 let bridges = [
-    {name:'Verrazano-Narrows Bridge', city_state:'New York, NY', meters:'1298.4', location:'[40.6066, -74.0447]' },
-    {name:'Golden Gate Bridge', city_state:'San Francisco and Marin, CA', meters:'1280.2', location:'[37.8199, -122.4783]' },
-    {name:'Mackinac Bridge', city_state:'Mackinaw and St Ignace, MI', meters:'1158.0', location:'[45.8174, -84.7278]' },
-    {name:'George Washington Bridge', city_state:'New York, NY and New Jersey, NJ', meters:'1067.0', location:'[40.8517, -73.9527]' },
-    {name:'Tacoma Narrows Bridge', city_state:'Tacoma and Kitsap, WA', meters:'853.44', location:'[47.2690, -122.5517]' }
+    {name:'Verrazano-Narrows Bridge', city_state:'New York, NY', meters:'1298.4', lat:'[40.6066]', long:'-74.0447' },
+    {name:'Golden Gate Bridge', city_state:'San Francisco and Marin, CA', meters:'1280.2', lat:'37.8199', long: '-122.4783' },
+    {name:'Mackinac Bridge', city_state:'Mackinaw and St Ignace, MI', meters:'1158.0', lat:45.8174, long: '-84.7278' },
+    {name:'George Washington Bridge', city_state:'New York, NY and New Jersey, NJ', meters:'1067.0', lat:'40.8517', long: '-73.9527' },
+    {name:'Tacoma Narrows Bridge', city_state:'Tacoma and Kitsap, WA', meters:'853.44', lat:'47.2690', long: '-122.5517' }
 ];
 
 //icon creation
@@ -32,10 +32,10 @@ let icon = L.icon({
 //cannot get this feature to work
 
 bridges.forEach(function (element) {
-    // let bridgeCoordinates = [element.location];
-    // let bridgeMarker = L.marker(bridgeCoordinates,{icon: icon}).addTo(map)
-        let stPaulCoordinates = [44.94839, -93.1099]; //test marker
-        let stpMarker = L.marker(stPaulCoordinates, {icon: icon}).addTo(map) //test marker
+      // let bridgeCoordinates = [element.lat, element.long];
+      let bridgeMarker = L.marker([element.lat, element.long], {icon: icon}).addTo(map)
+     //    let stPaulCoordinates = [44.94839, -93.1099]; //test marker
+     //    let stpMarker = L.marker(stPaulCoordinates, {icon: icon}).addTo(map) //test marker
         .bindPopup('NAME: ' + element.name + ' SPAN: '+ element.meters) //pop up with bridge name & span
         .addTo(map)
 });
