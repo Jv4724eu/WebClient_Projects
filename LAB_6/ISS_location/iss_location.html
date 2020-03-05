@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello fetch - wheres the ISS?</title>
+<!--    async = load the script in parallel with the html-->
+<!--    defer = wait until the html has finished loading before running the script-->
+
+    <!--    leaflet script & CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+    <!--    my stylesheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<!--    defer means wait for page to load - including the leaflet script - before executing -->
+    <script async defer src="fetch.js"></script>
+</head>
+
+<body>
+    <h1> Where is the International Space Station</h1>
+    <h2> This page will update every 10 seconds </h2>
+    <p id="time"></p>
+
+<div>
+    <p> ISS Latitude: <span id="iss-lat"></span> </p>
+    <p> ISS Longitude: <span id="iss-long"></span></p>
+</div>
+
+
+<div id="iss-map"></div>
+
+
+</body>
+</html>
